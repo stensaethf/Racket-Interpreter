@@ -1,0 +1,5 @@
+(define length (lambda (L) (if (null? L) 0 (+ 1 (length (cdr L))))))
+(length (quote ())) ;; 0 ;; works
+(length (quote (1))) ;; 1 ;; works
+(length (quote (4 6))) ;; 2 ;; works
+(length (quote (4 5 6))) ;; 3 ;; works

@@ -1,0 +1,5 @@
+(quote a)
+(quote (a b c))
+(quote (a b (quote (c d e))))
+(let ((foo "hello") (bar (quote (foo 5 "hi"))) (baz #f)) (if baz foo bar))
+(let ((foo "hello") (bar (quote (foo 5 "hi"))) (baz #t)) (if baz foo bar))

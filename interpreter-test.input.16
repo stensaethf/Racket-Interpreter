@@ -1,0 +1,5 @@
+(car (quote (1 2 3))) ;; 1 ;; works
+(cdr (quote (1 2 3))) ;; 2 3,null ;; works
+(cdr (quote (1))) ;; () ;; works
+(car 1) ;; error ;; works
+(car (quote ())) ;; error ;; works

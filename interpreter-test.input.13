@@ -1,0 +1,62 @@
+(define a (quote (b)))
+(cons a (quote (2)))
+
+;(cons 1)
+(cons 1 (quote ())) ;; '1
+(cons 1 (quote (1))) ;; 1 1
+(cons 1 (quote (1 1))) ;; 1 1 1
+(cons 1 (quote ("hello"))) ;; 1 "hello"
+(cons "hello" (quote ())) ;; "hello"
+(cons (quote ()) (quote ())) ;; (())
+(cons (quote ()) (quote (1))) ;; () 1
+(cons (quote ()) (quote ("hello"))) ;; () "hello"
+(cons (quote ()) (quote (a))) ;; () a
+(cons 1 (cons 2 (quote (3)))) ;; 1 2 3
+(cons (quote ()) (cons (quote ()) (quote ()))) ;; () ()
+(cons (quote (1)) (cons (quote ()) (quote ()))) ;; (1) ()
+(cons (quote (a)) (quote ())) ;; (a)
+(cons (quote (1)) (quote ())) ;; (1)
+(cons (quote (a)) (quote (2))) ;; (a) 2
+(cons "hello" (quote (2))) ;; "hello" 2
+(cons (quote (1)) (quote (2))) ;; (1) 2
+
+(cons (quote (1)) (cons (quote ()) (quote ()))) ;; (1) ()
+(car (cons (quote (1)) (cons (quote ()) (quote ())))) ;; 1
+(cdr (cons (quote (1)) (cons (quote ()) (quote ())))) ;; ()
+(car (cdr (cons (quote (1)) (cons (quote ()) (quote ()))))) ;; ()
+
+
+(define append
+    (lambda (L1 L2)
+        (if (null? L1)
+            L2
+            (cons (car L1) (append (cdr L1) L2)))))
+            
+(append (quote (4 5)) (quote (6 7)))
+
+(define reverse-list
+    (lambda (L)
+        (if (null? L)
+            L
+            (append (reverse-list (cdr L)) (cons (car L) (quote ()))))))
+            
+(reverse-list (quote ()))
+(reverse-list (quote (1 2 3 4)))
+(reverse-list (quote (("computer" "science") "is" "awesome")))
+
+(cons 1 2)
+(cons (quote (1)) 2)
+(car (cons 1 2))
+(cdr (cons 1 2))
+(cons (quote ()) 2)
+(car (cons (quote ()) 2))
+(cons (quote ("hello")) "hello")
+(cons (quote ("hello")) " . ")
+(cons " . " " . ")
+(cons (cons 1 2) 3)
+(cons 0 (cons 1 2))
+(cons (cons " . " " . ") " . ")
+(cons (cons (cons " . " " . ") " . ") (quote (" . " " . " " . ")))
+(cons " . " (quote (" . " " . ")))
+(quote (" . " " . " " . "))
+(cons (cons (cons (cons (cons (cons (cons -1 0) 1) 2) 3) 4) 5) 6)

@@ -1,0 +1,8 @@
+(cond (else 1)) ;; 1
+(cond (#t 1)) ;; 1
+(cond (#f 1) (#t 2)) ;; 2
+(define x #t)
+(cond (x 1)) ;; 1
+(cond (#t 2) (#t 3)) ;; 2
+(cond (#f 2) (#f 3)) ;; nothing
+(cond (else 2) (#t 3)) ;; error

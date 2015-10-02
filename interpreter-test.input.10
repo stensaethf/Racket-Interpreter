@@ -1,0 +1,10 @@
+(define quo (lambda (x) (quote ())))
+(quo 2) ;; ()
+
+(define recursive (lambda (bool) (if bool "recursion worked!" (recursive #t))))
+(recursive #f) ;; "recursion worked!"
+
+(define curry3 (lambda (x) (lambda (y) (lambda (z) "Curried 3 times"))))
+(curry3 1) ;; #<procedure>
+((curry3 1) 2) ;; #<procedure>
+(((curry3 1) 2) 3) ;; "Curried 3 times"

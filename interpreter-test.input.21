@@ -1,0 +1,12 @@
+(define x 1)
+x ;; 1
+(set! x 2)
+x ;; 2
+
+(let ((x 1) (y 3)) (set! x 3))
+x ;; 2
+
+(let ((y 2) (z 2)) (set! x 3))
+x ;; 3
+
+(set! z 2) ;; error

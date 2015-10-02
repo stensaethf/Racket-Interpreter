@@ -1,0 +1,10 @@
+(define a (lambda (b) b))
+(a 3) ;; 3
+(define c (lambda () 4))
+(c) ;; 4
+(define z (let ((x 2) (y 2)) (lambda (x) x)))
+(z 2) ;; 2
+(define curry (lambda (y) (lambda (z) z)))
+((curry 5) 6) ;; 6
+((curry 6) 5) ;; 5
+(curry 6) ;; #<procedure>

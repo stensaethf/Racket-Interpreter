@@ -1,0 +1,5 @@
+a
+a b c
+a b (quote (c d e))
+foo 5 "hi"
+"hello"

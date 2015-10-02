@@ -1,0 +1,7 @@
+(null? 1)
+(null? "hello")
+(null? (quote (1))) ;; #f
+(null? (quote ())) ;; #t
+(null? 1 2)
+
+;(null?) ;; evaluation error

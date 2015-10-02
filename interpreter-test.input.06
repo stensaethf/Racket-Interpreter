@@ -1,0 +1,3 @@
+(quote (quote (quote a)))
+(if #f 3 (quote a))
+(if #f 3 (let ((x "hello") (y (quote (a b c)))) y)) 

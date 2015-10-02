@@ -1,0 +1,13 @@
+(define d (lambda (bool) (if bool (lambda () 4) bool)))
+(d #t) ;; #<procedure>
+((d #t)) ;; 4
+(d #f) ;; #f
+
+(define xy (lambda (a b c) (if a b c)))
+(xy #t 1 0) ;; 1
+(xy #f 1 0) ;; 0
+
+(define x (lambda (x) x))
+(define xx (lambda (x) x))
+(x 2) ;; 2
+(xx 3) ;; 3
